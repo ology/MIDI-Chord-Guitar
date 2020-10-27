@@ -118,8 +118,7 @@ to the note numbers 48, 60, or 72).
 
 sub transform {
     my ($self, $pitches, $target) = @_;
-    my $lowest = _lowest_c($pitches);
-    my $diff = $target - $lowest;
+    my $diff = $target - _lowest_c($pitches);
     my @notes;
     for my $pitch (@$pitches) {
         push @notes, $pitch + $diff;
