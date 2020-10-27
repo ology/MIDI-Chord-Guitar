@@ -19,6 +19,8 @@ use Text::CSV_XS;
 
   my $mcg = MIDI::Chord::Guitar->new;
 
+  my $voicings = $mcg->voicings('dim7');
+
   my $chord = $mcg->transform('D3', 'dim7', 0);
 
   # MIDI:
