@@ -3,6 +3,7 @@ Revision history for MIDI-Chord-Guitar
 {{$NEXT}}
     - "Normalize" got/expect syntax in the test.
     - Re-add the MIDI pitch numbers diagram.
+    - Improve documentation.
 
 0.0104 2020-10-27 08:42:19
     - Improve layout of HTML-in-POD.
