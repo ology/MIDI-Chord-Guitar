@@ -8,8 +8,6 @@ use_ok 'MIDI::Chord::Guitar';
 
 my $mcg = new_ok 'MIDI::Chord::Guitar';
 
-#is $mcg->as_file, 'share/midi-guitar-chord-voicings.csv', 'as_file';
-
 my $got = $mcg->transform('D3', '', 4);
 is_deeply $got, [50, 57, 62, 66], 'transform';
 
