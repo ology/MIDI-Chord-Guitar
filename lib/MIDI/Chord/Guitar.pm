@@ -21,7 +21,9 @@ MIDI::Chord::Guitar - MIDI pitches for guitar chord voicings
   use MIDI::Chord::Guitar;
   my $mcg = MIDI::Chord::Guitar->new;
   my $chord = $mcg->as_hashref->{C}[4]; # C major at position X
-  my $transformed = $mcg->transform($chord, 50); # Down to D
+  my $transformed = $mcg->transform($chord, 50); # Down to bottom D
+  $chord = $mcg->as_hashref->{C}[3]; # C major barre at position VIII
+  $transformed = $mcg->transform($chord, 40); # Down to bottom E
 
   # MIDI:
   #$score->n('wn', @$transformed);
