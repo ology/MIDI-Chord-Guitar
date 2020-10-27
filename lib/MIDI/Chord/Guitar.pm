@@ -38,7 +38,7 @@ of an C<E A D G B E> tuned guitar.
 
 =begin html
 
-Here is a handy diagram of the MIDI pitch numbers laid out on a guitar neck:
+Here is a handy diagram of MIDI pitch numbers laid out on a guitar neck:
 <br>
 <img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/master/guitar-position-midi-numbers.png">
 <br>
