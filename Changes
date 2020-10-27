@@ -1,6 +1,7 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Improve documentation.
 
 0.0106 2020-10-27 10:10:16
     - Add the eg/autumn_Leaves program to illustrate real life usage.
