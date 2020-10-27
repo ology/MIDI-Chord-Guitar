@@ -163,12 +163,18 @@ sub voicings {
 1;
 __END__
 
+=head1 SEE ALSO
+
+The F<t/01-methods.t> file in this distribution
+
 L<File::ShareDir>
 
 L<List::Util>
 
 L<Moo>
 
+L<Music::Note>
+
 L<Text::CSV_XS>
 
-1;
+=cut
