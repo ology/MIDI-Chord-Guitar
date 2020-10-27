@@ -42,7 +42,24 @@ Here is a handy diagram of the MIDI pitch numbers laid out on a guitar neck:
 
 =end html
 
+=head1 ATTRIBUTES
+
+=head2 chords
+
+  $chords = $mcg->chords;
+
+Computed attribute available after construction.
+
 =cut
+
+has chords => (
+  is       => 'lazy',
+  init_arg => undef,
+);
+
+sub _build_chords {
+    my ($self) = @_;
+}
 
 =head1 METHODS
 
@@ -72,7 +89,7 @@ Return the data as a hashref of named chords.
 
 sub as_hashref {
     my ($self) = @_;
-    my $file = as_file();
+    my $file = $self->as_file();
 
     my %data;
 
