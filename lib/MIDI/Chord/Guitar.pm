@@ -152,6 +152,20 @@ sub _lowest_c {
     return $lowest;
 }
 
+=head2 voicings
+
+  $mcg->voicings($chord_name);
+
+Return all the voicings of a given B<chord_name>.
+
+=cut
+
+sub voicings {
+    my ($self, $chord_name) = @_;
+    $chord_name //= '';
+    return $self->chords->{ 'C' . $chord_name };
+}
+
 1;
 __END__
 
