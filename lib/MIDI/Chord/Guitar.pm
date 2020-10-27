@@ -104,27 +104,6 @@ sub as_file {
     return $file;
 }
 
-=head2 lowest_c
-
-  $c = $mcg->lowest_c($pitches);
-
-=cut
-
-sub lowest_c {
-    my ($self, $pitches) = @_;
-    my $lowest = 0;
-    if (any { $_ == 48 } @$pitches) {
-        $lowest = 48;
-    }
-    elsif (any { $_ == 60 } @$pitches) {
-        $lowest = 60;
-    }
-    elsif (any { $_ == 72 } @$pitches) {
-        $lowest = 72;
-    }
-    return $lowest;
-}
-
 =head2 transform
 
   $transformed = $mcg->transform($pitches, $target);
@@ -139,13 +118,28 @@ to the note numbers 48, 60, or 72).
 
 sub transform {
     my ($self, $pitches, $target) = @_;
-    my $lowest = $self->lowest_c($pitches);
+    my $lowest = _lowest_c($pitches);
     my $diff = $target - $lowest;
     my @notes;
     for my $pitch (@$pitches) {
         push @notes, $pitch + $diff;
     }
     return \@notes;
+}
+
+sub _lowest_c {
+    my ($pitches) = @_;
+    my $lowest = 0;
+    if (any { $_ == 48 } @$pitches) {
+        $lowest = 48;
+    }
+    elsif (any { $_ == 60 } @$pitches) {
+        $lowest = 60;
+    }
+    elsif (any { $_ == 72 } @$pitches) {
+        $lowest = 72;
+    }
+    return $lowest;
 }
 
 1;
