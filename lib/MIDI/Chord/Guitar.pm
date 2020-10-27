@@ -13,10 +13,6 @@ use Moo;
 use Music::Note;
 use Text::CSV_XS;
 
-=head1 NAME
-
-MIDI::Chord::Guitar - MIDI pitches for guitar chord voicings
-
 =head1 SYNOPSIS
 
   use MIDI::Chord::Guitar;
