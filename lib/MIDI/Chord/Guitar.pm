@@ -54,12 +54,12 @@ They are as follows:
   dim
   dim7
   m (minor)
-  m11
   m6
   m7
   m7b5
   m7b5#9
   m9
+  m11
   maj7
   maj7#11
   maj9
