@@ -23,13 +23,7 @@ MIDI::Chord::Guitar - MIDI pitches for guitar chord voicings
 
   my $mcg = MIDI::Chord::Guitar->new;
 
-  my $chord = $mcg->chords->{C}[2]; # C major barre at position III
-  my $transformed = $mcg->transform($chord, 50); # Up to D
-
-  $chord = $mcg->chords->{C}[4]; # C major at position X
-  $transformed = $mcg->transform($chord, 50); # Down to D
-
-  $transformed = $mcg->to_chord('D3', 'm7b5', 2);
+  $transformed = $mcg->transform('D3', 'dim7', 0);
 
   # MIDI:
   #$score->n('wn', @$transformed);
