@@ -21,8 +21,8 @@ for my $spec (
     ['D3', '7'],
     ['G2', 'm'],
 ) {
-  my $chord = $mcg->transform(@$spec);
-  $score->n('wn', @$chord);
+    my $chord = $mcg->transform(@$spec);
+    $score->n('wn', @$chord);
 }
 
 $score->write_score("$0.mid");
