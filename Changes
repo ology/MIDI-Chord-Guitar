@@ -1,7 +1,7 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
-    - Fix SYNOPSIS.
+    - Fix NAME, SYNOPSIS and SEE ALSO POD sections.
     - Add test.
 
 0.0100 2020-10-27 08:01:34
