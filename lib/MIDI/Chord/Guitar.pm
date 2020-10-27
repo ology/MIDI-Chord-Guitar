@@ -139,8 +139,8 @@ Find the chord given the B<target>, B<chord_name> and B<variation>.
 The B<target> must be in the format of an C<ISO> note (e.g. on the
 guitar, a C note is represented by C<C3>, C<C4>, C<C5>, etc).
 
-There is no logic to the order of the voicing variations of a chord.
-Please use the above diagrams to figure out the neck positions.
+If no B<chord_name> is given, C<major> is used.  If no B<variation> is
+given, C<0> is used.
 
 =cut
 
@@ -178,6 +178,10 @@ sub _lowest_c {
   $mcg->voicings($chord_name);
 
 Return all the voicings of a given B<chord_name>.
+
+The order of the voicing variations of a chord is by fret position.
+So, the first variations are at lower frets.  Please use the above
+diagrams to figure out the exact neck positions.
 
 =cut
 
