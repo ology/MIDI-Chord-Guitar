@@ -112,7 +112,7 @@ Find the difference in the B<pitches> between the B<target> and the
 lowest guitar range C<C>.
 
 The B<target> must be in the format of a C<midinum> (e.g. on the
-guitar, C is equal to the note numbers 48, 60, or 72).
+guitar, C is equal to the note numbers 48, 60, or 72, etc).
 
 =cut
 
