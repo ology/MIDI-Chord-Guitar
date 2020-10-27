@@ -7,10 +7,11 @@ our $VERSION = '0.0100';
 use strict;
 use warnings;
 
+use File::ShareDir qw(dist_dir);
 use List::Util qw(any);
 use Moo;
+use Music::Note;
 use Text::CSV_XS;
-use File::ShareDir qw(dist_dir);
 
 =head1 NAME
 
@@ -28,6 +29,8 @@ MIDI::Chord::Guitar - MIDI pitches for guitar chord voicings
   $chord = $mcg->chords->{C}[4]; # C major at position X
   $transformed = $mcg->transform($chord, 50); # Down to D
 
+  $transformed = $mcg->to_chord('D3', 'm7b5', 2);
+
   # MIDI:
   #$score->n('wn', @$transformed);
 
@@ -41,6 +44,11 @@ of an C<E A D G B E> tuned guitar.
 Here is a handy diagram of MIDI pitch numbers laid out on a guitar neck:
 <br>
 <img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/master/guitar-position-midi-numbers.png">
+<br>
+
+And here is a diagram of MIDI pitch octaves laid out on a guitar neck:
+<br>
+<img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/master/guitar-position-midi-octaves.png">
 <br>
 
 =end html
@@ -106,18 +114,21 @@ sub as_file {
 
 =head2 transform
 
-  $transformed = $mcg->transform($pitches, $target);
+  $transformed = $mcg->transform($target, $chord_name, $variation);
 
-Find the difference in the B<pitches> between the B<target> and the
-lowest guitar range C<C>.
+Find the chord given the B<target>, B<chord_name> and B<variation>.
 
-The B<target> must be in the format of a C<midinum> (e.g. on the
-guitar, C is equal to the note numbers 48, 60, or 72, etc).
+The B<target> must be in the format of an C<ISO> note (e.g. on the
+guitar, a C note is represented by C<C3>, C<C4>, C<C5>, etc).
 
 =cut
 
 sub transform {
-    my ($self, $pitches, $target) = @_;
+    my ($self, $target, $chord_name, $variation) = @_;
+    $target = Music::Note->new($target, 'ISO')->format('midinum');
+    $chord_name //= '';
+    $variation //= 0;
+    my $pitches = $self->chords->{ 'C' . $chord_name }[$variation];
     my $diff = $target - _lowest_c($pitches);
     my @notes;
     for my $pitch (@$pitches) {
