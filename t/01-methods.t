@@ -8,8 +8,20 @@ use_ok 'MIDI::Chord::Guitar';
 
 my $mcg = new_ok 'MIDI::Chord::Guitar';
 
-my $got = $mcg->transform('D3', '', 4);
-my $expect = [50, 57, 62, 66];
+my $got = $mcg->transform('X', '');
+my $expect = [60, 64, 67, 72]; # C
+is_deeply $got, $expect, 'transform';
+
+$got = $mcg->transform('C3', 'X');
+$expect = [];
+is_deeply $got, $expect, 'transform';
+
+$got = $mcg->transform('C3', '', 42);
+$expect = [];
+is_deeply $got, $expect, 'transform';
+
+$got = $mcg->transform('D3', '', 4);
+$expect = [50, 57, 62, 66];
 is_deeply $got, $expect, 'transform';
 
 $got = $mcg->transform('E2', '', 3);
