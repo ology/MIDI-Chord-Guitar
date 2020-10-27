@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Improve layout of HTML-in-POD.
+
+0.0103 2020-10-27 08:22:31
     - Attempt to fix the HTML image URLs once again...
 
 0.0102 2020-10-27 08:17:33
