@@ -32,7 +32,6 @@ of an C<E A D G B E> tuned guitar.
 =begin html
 
 <p>Here is a handy diagram of MIDI pitch octaves laid out on a guitar neck:</p>
-<br>
 <img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/main/guitar-position-midi-octaves.png">
 
 =end html
