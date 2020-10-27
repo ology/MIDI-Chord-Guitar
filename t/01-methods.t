@@ -9,13 +9,15 @@ use_ok 'MIDI::Chord::Guitar';
 my $mcg = new_ok 'MIDI::Chord::Guitar';
 
 my $got = $mcg->transform('D3', '', 4);
-is_deeply $got, [50, 57, 62, 66], 'transform';
+my $expect = [50, 57, 62, 66];
+is_deeply $got, $expect, 'transform';
 
 $got = $mcg->transform('E2', '', 3);
-is_deeply $got, [40, 47, 52, 56, 59, 64], 'transform';
+$expect = [40, 47, 52, 56, 59, 64];
+is_deeply $got, $expect, 'transform';
 
 $got = $mcg->transform('D3', 'dim7', 0);
-my $expect = [41, 47, 50, 56];
+$expect = [41, 47, 50, 56];
 is_deeply $got, $expect, 'transform';
 
 $got = $mcg->voicings('dim7');
