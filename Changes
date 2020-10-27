@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Attempt to fix the HTML image URLs once again...
+
+0.0102 2020-10-27 08:17:33
     - Fix HTML image URLs.
 
 0.0101 2020-10-27 08:12:19
