@@ -59,6 +59,28 @@ has chords => (
 
 sub _build_chords {
     my ($self) = @_;
+
+    my $file = $self->as_file();
+
+    my %data;
+
+    my $csv = Text::CSV_XS->new({ binary => 1 });
+
+    open my $fh, '<', $file
+        or die "Can't read $file: $!";
+
+    while (my $row = $csv->getline($fh)) {
+        my $key = shift @$row;
+        my @notes;
+        for my $r (@$row) {
+            push @notes, $r if $r ne '';
+        }
+        push @{ $data{$key} }, \@notes;
+    }
+
+    close $fh;
+
+    return \%data;
 }
 
 =head1 METHODS
@@ -89,27 +111,7 @@ Return the data as a hashref of named chords.
 
 sub as_hashref {
     my ($self) = @_;
-    my $file = $self->as_file();
-
-    my %data;
-
-    my $csv = Text::CSV_XS->new({ binary => 1 });
-
-    open my $fh, '<', $file
-        or die "Can't read $file: $!";
-
-    while (my $row = $csv->getline($fh)) {
-        my $key = shift @$row;
-        my @notes;
-        for my $r (@$row) {
-            push @notes, $r if $r ne '';
-        }
-        push @{ $data{$key} }, \@notes;
-    }
-
-    close $fh;
-
-    return \%data;
+    return $self->chords;
 }
 
 =head2 lowest_c
@@ -155,6 +157,8 @@ sub transform {
     }
     return \@notes;
 }
+
+1;
 __END__
 
 L<File::ShareDir>
