@@ -20,9 +20,9 @@ MIDI::Chord::Guitar - MIDI pitches for guitar chord voicings
 
   use MIDI::Chord::Guitar;
   my $mcg = MIDI::Chord::Guitar->new;
-  my $chord = $mcg->as_hashref->{C}[4]; # C major at position X
+  my $chord = $mcg->chords->{C}[4]; # C major at position X
   my $transformed = $mcg->transform($chord, 50); # Down to bottom D
-  $chord = $mcg->as_hashref->{C}[3]; # C major barre at position VIII
+  $chord = $mcg->chords->{C}[3]; # C major barre at position VIII
   $transformed = $mcg->transform($chord, 40); # Down to bottom E
 
   # MIDI:
@@ -99,19 +99,6 @@ sub as_file {
     $file = 'share/midi-guitar-chord-voicings.csv'
         unless $file && -e $file;
     return $file;
-}
-
-=head2 as_hashref
-
-  %data = $mcg->as_hashref;
-
-Return the data as a hashref of named chords.
-
-=cut
-
-sub as_hashref {
-    my ($self) = @_;
-    return $self->chords;
 }
 
 =head2 lowest_c
