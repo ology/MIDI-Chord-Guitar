@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - "Normalize" got/expect syntax in the test.
+
+0.0104 2020-10-27 08:42:19
     - Improve layout of HTML-in-POD.
     - Add the known chord names to the documentation.
 
