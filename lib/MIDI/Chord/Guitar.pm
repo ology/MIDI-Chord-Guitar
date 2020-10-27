@@ -132,7 +132,7 @@ sub as_file {
 
 =head2 transform
 
-  $transformed = $mcg->transform($target, $chord_name, $variation);
+  $chord = $mcg->transform($target, $chord_name, $variation);
 
 Find the chord given the B<target>, B<chord_name> and B<variation>.
 
