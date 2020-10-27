@@ -19,10 +19,10 @@ use Text::CSV_XS;
 
   my $mcg = MIDI::Chord::Guitar->new;
 
-  my $transformed = $mcg->transform('D3', 'dim7', 0);
+  my $chord = $mcg->transform('D3', 'dim7', 0);
 
   # MIDI:
-  #$score->n('wn', @$transformed);
+  #$score->n('wn', @$chord);
 
 =head1 DESCRIPTION
 
