@@ -2,6 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Improve layout of HTML-in-POD.
+    - Add the known chord names to the documentation.
 
 0.0103 2020-10-27 08:22:31
     - Attempt to fix the HTML image URLs once again...
