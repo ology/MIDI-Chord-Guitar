@@ -139,6 +139,9 @@ Find the chord given the B<target>, B<chord_name> and B<variation>.
 The B<target> must be in the format of an C<ISO> note (e.g. on the
 guitar, a C note is represented by C<C3>, C<C4>, C<C5>, etc).
 
+There is no logic to the order of the voicing variations of a chord.
+Please use the above diagrams to figure out the neck positions.
+
 =cut
 
 sub transform {
