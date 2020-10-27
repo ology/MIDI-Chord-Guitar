@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Fix HTML image URLs.
+
+0.0101 2020-10-27 08:12:19
     - Fix NAME, SYNOPSIS and SEE ALSO POD sections.
     - Add test.
 
