@@ -12,25 +12,17 @@ my $mcg = MIDI::Chord::Guitar->new;
 
 # Progression: iv7–VII7–IIImaj7–VImaj7–iiø7–V7–i
 
-my $chord = $mcg->transform('C3', 'm7');
-$score->n('wn', @$chord);
-
-$chord = $mcg->transform('F3', '7');
-$score->n('wn', @$chord);
-
-$chord = $mcg->transform('Bb2', 'maj7');
-$score->n('wn', @$chord);
-
-$chord = $mcg->transform('Eb3', 'maj7');
-$score->n('wn', @$chord);
-
-$chord = $mcg->transform('A3', 'dim7');
-$score->n('wn', @$chord);
-
-$chord = $mcg->transform('D3', '7');
-$score->n('wn', @$chord);
-
-$chord = $mcg->transform('G2', 'm');
-$score->n('wn', @$chord);
+for my $spec (
+    ['C3', 'm7'],
+    ['F3', '7'],
+    ['Bb2', 'maj7'],
+    ['Eb3', 'maj7'],
+    ['A3', 'dim7'],
+    ['D3', '7'],
+    ['G2', 'm'],
+) {
+  my $chord = $mcg->transform(@$spec);
+  $score->n('wn', @$chord);
+}
 
 $score->write_score("$0.mid");
