@@ -151,10 +151,7 @@ sub transform {
     $variation //= 0;
     my $pitches = $self->chords->{ 'C' . $chord_name }[$variation];
     my $diff = $target - _lowest_c($pitches);
-    my @notes;
-    for my $pitch (@$pitches) {
-        push @notes, $pitch + $diff;
-    }
+    my @notes = map { $_ + $diff } @$pitches;
     return \@notes;
 }
 
