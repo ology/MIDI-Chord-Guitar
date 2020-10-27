@@ -35,7 +35,7 @@ Here is a handy diagram of MIDI pitch numbers laid out on a guitar neck:
 <br>
 <img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/main/guitar-position-midi-numbers.png">
 <br>
-
+<br>
 And here is a diagram of MIDI pitch octaves laid out on a guitar neck:
 <br>
 <img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/main/guitar-position-midi-octaves.png">
