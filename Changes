@@ -1,6 +1,7 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Simplify syntax.
 
 0.0107 2020-10-27 11:43:29
     - Improve documentation.
