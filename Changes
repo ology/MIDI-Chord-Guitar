@@ -1,4 +1,8 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Fix SYNOPSIS.
+    - Add test.
+
+0.0100 2020-10-27 08:01:34
     - Mint with Dist::Zilla.
