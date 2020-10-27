@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Add the eg/autumn_Leaves program to illustrate real life usage.
+
+0.0105 2020-10-27 09:26:56
     - "Normalize" got/expect syntax in the test.
     - Re-add the MIDI pitch numbers diagram.
     - Improve documentation.
