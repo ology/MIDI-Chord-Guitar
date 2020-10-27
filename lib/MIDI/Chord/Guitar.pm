@@ -33,6 +33,8 @@ of an C<E A D G B E> tuned guitar.
 
 <p>Here is a handy diagram of ISO MIDI pitches laid out on a guitar neck:</p>
 <img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/main/guitar-position-midi-octaves.png">
+<p>And here is a diagram of MIDI pitch numbers laid out on a guitar neck:</p>
+<img src="https://raw.githubusercontent.com/ology/MIDI-Chord-Guitar/main/guitar-position-midi-numbers.png">
 
 =end html
 
