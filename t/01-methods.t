@@ -19,7 +19,7 @@ my $expect = [ 41, 47, 50, 56 ];
 is_deeply $got, $expect, 'transform';
 
 $got = $mcg->voicings('dim7');
-my $expect = [ [ 51, 57, 60, 66 ], [ 48, 54, 57, 63, 66 ] ];
+$expect = [ [ 51, 57, 60, 66 ], [ 48, 54, 57, 63, 66 ] ];
 is_deeply $got, $expect, 'voicings';
 
 done_testing();
