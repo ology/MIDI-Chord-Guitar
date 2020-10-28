@@ -48,8 +48,7 @@ of an C<E A D G B E> tuned guitar.
 
 Computed attribute available after construction.
 
-The chord names are given to the module methods as the B<chord_name>.
-They are as follows:
+The known chord names are as follows:
 
   '' (major)
   aug
