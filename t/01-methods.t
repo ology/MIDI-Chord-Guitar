@@ -9,7 +9,7 @@ use_ok 'MIDI::Chord::Guitar';
 my $mcg = new_ok 'MIDI::Chord::Guitar';
 
 my $got = $mcg->transform('X', '');
-my $expect = [60, 64, 67, 72]; # C
+my $expect = [60, 64, 67, 72]; # C4
 is_deeply $got, $expect, 'transform';
 
 $got = $mcg->transform('C3', 'X');
