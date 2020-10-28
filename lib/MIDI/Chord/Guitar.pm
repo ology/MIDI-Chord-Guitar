@@ -160,14 +160,11 @@ sub transform {
 sub _lowest_c {
     my ($pitches) = @_;
     my $lowest = 0;
-    if (any { $_ == 48 } @$pitches) {
-        $lowest = 48;
-    }
-    elsif (any { $_ == 60 } @$pitches) {
-        $lowest = 60;
-    }
-    elsif (any { $_ == 72 } @$pitches) {
-        $lowest = 72;
+    for my $pitch (48, 60, 72) {
+        if (any { $_ == $pitch } @$pitches) {
+            $lowest = $pitch;
+            last;
+        }
     }
     return $lowest;
 }
