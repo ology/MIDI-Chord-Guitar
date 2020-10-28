@@ -179,6 +179,21 @@ The order of the voicing variations of a chord is by fret position.
 So, the first variations are at lower frets.  Please use the above
 diagrams to figure out the exact neck positions.
 
+Here is an example of the voicing CSV file which can be found with the
+B<as_file> method:
+
+  C,48,52,55,60,,
+  C,48,55,60,64,67,
+  C,48,52,55,60,64,72
+  C,48,55,60,64,67,72
+  C,60,67,72,76,,
+  C7,48,52,58,60,64,
+  C7,48,55,58,64,67,
+  C7,48,55,58,64,67,72
+  C7,48,52,55,60,64,70
+  C7,60,67,70,76,,
+  ...
+
 =cut
 
 sub voicings {
