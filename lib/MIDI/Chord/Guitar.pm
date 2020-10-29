@@ -20,6 +20,10 @@ use Text::CSV_XS;
   my $mcg = MIDI::Chord::Guitar->new;
 
   my $voicings = $mcg->voicings('dim7');
+  # [ [51,57,60,66], [48,54,57,63,66] ]
+
+  $voicings = $mcg->voicings('dim7', 'ISO');
+  # [ [D#3 A3 C4 F#4], [C3 F#3 A3 D#4 F#4] ]
 
   my $chord = $mcg->transform('D3', 'dim7', 0);
 
@@ -171,8 +175,11 @@ sub _lowest_c {
 =head2 voicings
 
   $mcg->voicings($chord_name);
+  $mcg->voicings($chord_name, $format);
 
-Return all the voicings of a given B<chord_name>.
+Return all the voicings of a given B<chord_name>.  The default
+B<format> is C<midinum> but can be given as C<ISO> to return named
+ntes with octaves.
 
 The order of the voicing variations of a chord is by fret position.
 So, the first variations are at lower frets.  Please use the above
@@ -196,9 +203,23 @@ B<as_file> method:
 =cut
 
 sub voicings {
-    my ($self, $chord_name) = @_;
+    my ($self, $chord_name, $format) = @_;
     $chord_name //= '';
-    return $self->chords->{ 'C' . $chord_name };
+    $format ||= '';
+    my $voicings = $self->chords->{ 'C' . $chord_name };
+    if ($format eq 'ISO') {
+        my $iso;
+        for my $chord (@$voicings) {
+            my $span;
+            for my $n (@$chord) {
+                my $note = Music::Note->new($n, 'midinum')->format('ISO');
+                push @$span, $note;
+            }
+            push @$iso, $span;
+        }
+        $voicings = $iso;
+    }
+    return $voicings;
 }
 
 1;

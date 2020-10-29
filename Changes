@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Show ->voicings as ISO notes if requested.
+
+0.0110 2020-10-28 12:37:49
     - Improve documentation.
     - Improve the eg/autumn_Leaves program.
 
