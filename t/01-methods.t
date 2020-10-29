@@ -40,4 +40,8 @@ $got = $mcg->voicings('dim7', 'ISO');
 $expect = [ ['D#3', 'A3', 'C4', 'F#4'], ['C3', 'F#3', 'A3', 'D#4', 'F#4'] ];
 is_deeply $got, $expect, 'voicings';
 
+$got = $mcg->voicings('dim7', 'midi');
+$expect = [ ['Ds3', 'A3', 'C4', 'Fs4'], ['C3', 'Fs3', 'A3', 'Ds4', 'Fs4'] ];
+is_deeply $got, $expect, 'voicings';
+
 done_testing();

@@ -2,7 +2,7 @@ package MIDI::Chord::Guitar;
 
 # ABSTRACT: MIDI pitches for guitar chord voicings
 
-our $VERSION = '0.0200';
+our $VERSION = '0.0201';
 
 use strict;
 use warnings;
@@ -178,8 +178,8 @@ sub _lowest_c {
   $mcg->voicings($chord_name, $format);
 
 Return all the voicings of a given B<chord_name>.  The default
-B<format> is C<midinum> but can be given as C<ISO> to return named
-notes with octaves.
+B<format> is C<midinum> but can be given as C<ISO> or C<midi> to
+return named notes with octaves.
 
 The order of the voicing variations of a chord is by fret position.
 So, the first variations are at lower frets.  Please use the above
@@ -207,17 +207,17 @@ sub voicings {
     $chord_name //= '';
     $format ||= '';
     my $voicings = $self->chords->{ 'C' . $chord_name };
-    if ($format eq 'ISO') {
-        my $iso;
+    if ($format) {
+        my $temp;
         for my $chord (@$voicings) {
             my $span;
             for my $n (@$chord) {
-                my $note = Music::Note->new($n, 'midinum')->format('ISO');
+                my $note = Music::Note->new($n, 'midinum')->format($format);
                 push @$span, $note;
             }
-            push @$iso, $span;
+            push @$temp, $span;
         }
-        $voicings = $iso;
+        $voicings = $temp;
     }
     return $voicings;
 }

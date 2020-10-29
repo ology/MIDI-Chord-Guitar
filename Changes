@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Allow the "midi" ->voicings format as well.
+
+0.0200 2020-10-29 05:27:32
     - Show ->voicings as ISO notes if requested.
 
 0.0110 2020-10-28 12:37:49
