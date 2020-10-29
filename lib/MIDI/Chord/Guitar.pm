@@ -179,7 +179,7 @@ sub _lowest_c {
 
 Return all the voicings of a given B<chord_name>.  The default
 B<format> is C<midinum> but can be given as C<ISO> to return named
-ntes with octaves.
+notes with octaves.
 
 The order of the voicing variations of a chord is by fret position.
 So, the first variations are at lower frets.  Please use the above
