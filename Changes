@@ -1,6 +1,8 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+
+0.0202 2020-10-30 06:05:52
     - Specify minimum List::Util version to use.
 
 0.0201 2020-10-29 05:51:30
