@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Specify minimum List::Util version to use.
+
+0.0201 2020-10-29 05:51:30
     - Allow the "midi" ->voicings format as well.
 
 0.0200 2020-10-29 05:27:32
