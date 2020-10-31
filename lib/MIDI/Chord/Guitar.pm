@@ -239,4 +239,6 @@ L<Music::Note>
 
 L<Text::CSV_XS>
 
+L<https://www.guitartricks.com/chords/C-chord> shapes
+
 =cut
