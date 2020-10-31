@@ -200,6 +200,9 @@ B<as_file> method:
   C7,60,67,70,76,,
   ...
 
+Check out the link in the L</"SEE ALSO"> section for the chord shapes
+used to create this.
+
 =cut
 
 sub voicings {
