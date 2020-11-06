@@ -14,7 +14,7 @@ my $mcg = MIDI::Chord::Guitar->new;
 
 for my $spec (
     [qw(C3  m7   2)],
-    [qw(F3  7    0)],
+    [qw(F3  7    4)],
     [qw(Bb2 maj7 3)],
     [qw(Eb3 maj7 2)],
     [qw(A3  dim7 0)],
