@@ -139,13 +139,15 @@ sub as_file {
 
   $chord = $mcg->transform($target, $chord_name, $variation);
 
-Find the chord given the B<target>, B<chord_name> and B<variation>.
+Find the chord given the B<target>, B<chord_name> and an optional
+B<variation>.
 
 The B<target> must be in the format of an C<ISO> note (e.g. on the
 guitar, a C note is represented by C<C3>, C<C4>, C<C5>, etc).
 
-If no B<chord_name> is given, C<major> is used.  If no B<variation> is
-given, C<0> is used.
+If no B<chord_name> is given, C<major> is used.
+
+If no B<variation> is given, all transformed voicings are returned.
 
 =cut
 
@@ -153,10 +155,18 @@ sub transform {
     my ($self, $target, $chord_name, $variation) = @_;
     $target = Music::Note->new($target, 'ISO')->format('midinum');
     $chord_name //= '';
-    $variation //= 0;
-    my $pitches = $self->chords->{ 'C' . $chord_name }[$variation];
-    my $diff = $target - _lowest_c($pitches);
-    my @notes = map { $_ + $diff } @$pitches;
+    my @notes;
+    if (defined $variation) {
+      my $pitches = $self->chords->{ 'C' . $chord_name }[$variation];
+      my $diff = $target - _lowest_c($pitches);
+      @notes = map { $_ + $diff } @$pitches;
+    }
+    else {
+        for my $pitches ($self->chords->{ 'C' . $chord_name }->@*) {
+            my $diff = $target - _lowest_c($pitches);
+            push @notes, [ map { $_ + $diff } @$pitches ];
+        }
+    }
     return \@notes;
 }
 
