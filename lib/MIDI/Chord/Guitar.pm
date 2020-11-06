@@ -11,7 +11,7 @@ use File::ShareDir qw(dist_dir);
 use List::Util qw(any);
 use Moo;
 use Music::Note;
-use Text::CSV_XS;
+use Text::CSV_XS ();
 
 =head1 SYNOPSIS
 
