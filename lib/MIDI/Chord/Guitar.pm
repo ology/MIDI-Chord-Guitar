@@ -25,6 +25,8 @@ use Text::CSV_XS;
   $voicings = $mcg->voicings('dim7', 'ISO');
   # [ [D#3 A3 C4 F#4], [C3 F#3 A3 D#4 F#4] ]
 
+  my $chords = $mcg->transform('D3', 'dim7');
+
   my $chord = $mcg->transform('D3', 'dim7', 0);
 
   # MIDI:
@@ -138,6 +140,7 @@ sub as_file {
 =head2 transform
 
   $chord = $mcg->transform($target, $chord_name, $variation);
+  $chords = $mcg->transform($target, $chord_name);
 
 Find the chord given the B<target>, B<chord_name> and an optional
 B<variation>.
