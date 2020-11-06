@@ -5,7 +5,7 @@ use warnings;
 use Data::Dumper;
 use lib map { "$ENV{HOME}/sandbox/$_/lib" } qw(MIDI-Chord-Guitar);
 use MIDI::Chord::Guitar;
-use Statistics::Basic qw(mean median);
+use Statistics::Basic qw(median);
 
 my $mcg = MIDI::Chord::Guitar->new;
 
