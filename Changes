@@ -2,6 +2,8 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Add the link to where I got the chord shapes!
+    - Improve documentation.
+    - Make the ->transform method return all transformed voicings if no variation is given.
 
 0.0202 2020-10-30 06:05:52
     - Specify minimum List::Util version to use.
