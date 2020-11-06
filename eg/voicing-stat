@@ -21,6 +21,6 @@ for my $spec (
     my $chords = $mcg->transform(@$spec);
 #warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper($chords));
 
-    my $x = [map { '' . mean(@$_) } @$chords];
+    my $x = [map { '' . median(@$_) } @$chords];
 warn(__PACKAGE__,' ',__LINE__," @$spec: @$x\n");
 }
