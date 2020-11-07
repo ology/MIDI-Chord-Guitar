@@ -167,7 +167,7 @@ sub transform {
       @notes = map { $_ + $diff } @$pitches;
     }
     else {
-        for my $pitches ($self->chords->{ 'C' . $chord_name }->@*) {
+        for my $pitches (@{ $self->chords->{ 'C' . $chord_name } }) {
             my $diff = $target - _lowest_c($pitches);
             push @notes, [ map { $_ + $diff } @$pitches ];
         }
