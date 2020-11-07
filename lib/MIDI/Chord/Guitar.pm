@@ -9,9 +9,11 @@ use warnings;
 
 use File::ShareDir qw(dist_dir);
 use List::Util qw(any);
-use Moo;
 use Music::Note;
 use Text::CSV_XS ();
+use Moo;
+use strictures 2;
+use namespace::clean;
 
 =head1 SYNOPSIS
 
