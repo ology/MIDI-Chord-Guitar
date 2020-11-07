@@ -178,9 +178,9 @@ sub transform {
 sub _lowest_c {
     my ($pitches) = @_;
     my $lowest = 0;
-    for my $pitch (48, 60, 72) {
-        if (any { $_ == $pitch } @$pitches) {
-            $lowest = $pitch;
+    for my $c (48, 60, 72) {
+        if (any { $_ == $c } @$pitches) {
+            $lowest = $c;
             last;
         }
     }
