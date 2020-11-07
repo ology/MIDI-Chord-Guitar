@@ -2,7 +2,7 @@ package MIDI::Chord::Guitar;
 
 # ABSTRACT: MIDI pitches for guitar chord voicings
 
-our $VERSION = '0.0300';
+our $VERSION = '0.0301';
 
 use strict;
 use warnings;
