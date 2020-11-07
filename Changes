@@ -2,6 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Update the eg/ programs.
+    - Get rid of the postfix deref.
 
 0.0300 2020-11-06 06:20:04
     - Add the link to where I got the chord shapes!
