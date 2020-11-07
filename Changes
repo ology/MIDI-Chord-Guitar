@@ -1,6 +1,7 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Use strictures & namespace::clean.
 
 0.0301 2020-11-07 06:14:45
     - Update the eg/ programs.
