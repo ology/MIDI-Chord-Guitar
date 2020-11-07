@@ -1,6 +1,8 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+
+0.0301 2020-11-07 06:14:45
     - Update the eg/ programs.
     - Get rid of the postfix deref.
 
