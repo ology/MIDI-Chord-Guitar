@@ -156,6 +156,17 @@ If no B<chord_name> is given, C<major> is used.
 
 If no B<variation> is given, all transformed voicings are returned.
 
+For example, here are the open chord specs for each note in the key of
+C:
+
+  'C3', '', 0
+  'D3', '', 4
+  'E2', '', 3
+  'F2', '', 3
+  'G2', '', 2
+  'A2', '', 1
+  'B2', '', 1
+
 =cut
 
 sub transform {
