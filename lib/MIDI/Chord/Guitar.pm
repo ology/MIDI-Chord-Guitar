@@ -58,7 +58,7 @@ of an C<E A D G B E> tuned guitar.
 
 Computed attribute available after construction.
 
-The known chord names are as follows:
+The known chord names in the key of C are as follows:
 
   '' (major)
   aug
