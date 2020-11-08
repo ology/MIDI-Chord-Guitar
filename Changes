@@ -2,6 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Fix-up eg/ programs a bit.
+    - Improve documentation.
 
 0.0303 2020-11-08 07:09:16
     - Add an example of Travis picking.
