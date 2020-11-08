@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Add an example of Travis picking.
+
+0.0302 2020-11-08 05:01:57
     - Use strictures & namespace::clean.
     - Improve documentation slightly.
 
