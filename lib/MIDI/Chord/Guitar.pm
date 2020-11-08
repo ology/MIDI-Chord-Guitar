@@ -58,7 +58,7 @@ of an C<E A D G B E> tuned guitar.
 
 Computed attribute available after construction.
 
-The known chord names in the key of C are as follows:
+The known chord names are as follows:
 
   '' (major)
   aug
@@ -194,9 +194,10 @@ sub _lowest_c {
   $mcg->voicings($chord_name);
   $mcg->voicings($chord_name, $format);
 
-Return all the voicings of a given B<chord_name>.  The default
-B<format> is C<midinum> but can be given as C<ISO> or C<midi> to
-return named notes with octaves.
+Return all the voicings of a given B<chord_name> in the key of C.
+
+The default B<format> is C<midinum> but can be given as C<ISO> or
+C<midi> to return named notes with octaves.
 
 The order of the voicing variations of a chord is by fret position.
 So, the first variations are at lower frets.  Please use the above
