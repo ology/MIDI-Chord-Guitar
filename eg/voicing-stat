@@ -18,8 +18,8 @@ for my $spec (
     [qw(G2  m)],
 ) {
     my $chords = $mcg->transform(@$spec);
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",Dumper($chords));
+#warn Dumper($chords);
 
     my $x = [map { '' . median(@$_) } @$chords];
-warn(__PACKAGE__,' ',__LINE__," @$spec: @$x\n");
+warn "@$spec: @$x\n";
 }
