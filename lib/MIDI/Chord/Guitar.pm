@@ -156,8 +156,8 @@ If no B<chord_name> is given, C<major> is used.
 
 If no B<variation> is given, all transformed voicings are returned.
 
-For example, here are the open chord specs for each note in the key of
-C:
+For example, here are the open major chord specs for each note in the
+key of C:
 
   'C3', '', 0
   'D3', '', 4
