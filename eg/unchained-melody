@@ -17,9 +17,6 @@ my $mcg = MIDI::Chord::Guitar->new;
 #    ['A2', 'm'],
 #    ['F2', ''],
 #    ['G2', ''],
-#    ['C3', ''],
-#    ['A2', 'm'],
-#    ['G2', ''],
 #) {
 #    my $chords = $mcg->transform(@$spec);
 #warn(__PACKAGE__,' ',__LINE__," MARK: ",ddc($chords));
