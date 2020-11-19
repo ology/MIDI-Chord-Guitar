@@ -15,7 +15,7 @@ my $mcg = MIDI::Chord::Guitar->new;
 #for my $spec (
 #    ['C3', ''],
 #    ['A2', 'm'],
-#    ['F2', ''],
+#    ['F3', ''],
 #    ['G2', ''],
 #) {
 #    my $chords = $mcg->transform(@$spec);
@@ -27,7 +27,7 @@ for my $n (1 .. 2) {
     for my $spec (
         ['C3', '', 0],
         ['A2', 'm', 3],
-        ['F2', '', 0],
+        ['F3', '', 0],
         ['G2', '', 0],
         ['C3', '', 0],
         ['A2', 'm', 3],
