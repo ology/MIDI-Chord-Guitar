@@ -19,7 +19,7 @@ my $mcg = MIDI::Chord::Guitar->new;
 #    ['G2', ''],
 #) {
 #    my $chords = $mcg->transform(@$spec);
-#warn(__PACKAGE__,' ',__LINE__," MARK: ",ddc($chords));
+#    print "@$spec: ", ddc($chords);
 #}
 #__END__
 
