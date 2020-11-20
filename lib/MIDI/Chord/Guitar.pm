@@ -2,7 +2,7 @@ package MIDI::Chord::Guitar;
 
 # ABSTRACT: MIDI pitches for guitar chord voicings
 
-our $VERSION = '0.0304';
+our $VERSION = '0.0400';
 
 use strict;
 use warnings;
@@ -173,12 +173,18 @@ key of C:
 
 sub transform {
     my ($self, $target, $chord_name, $variation) = @_;
+
     $target = Music::Note->new($target, 'ISO')->format('midinum');
+
     $chord_name //= '';
+
     my @notes;
+
     if (defined $variation) {
       my $pitches = $self->chords->{ 'C' . $chord_name }[$variation];
+
       my $diff = $target - _lowest_c($pitches);
+
       @notes = map { $_ + $diff } @$pitches;
     }
     else {
@@ -187,18 +193,22 @@ sub transform {
             push @notes, [ map { $_ + $diff } @$pitches ];
         }
     }
+
     return \@notes;
 }
 
 sub _lowest_c {
     my ($pitches) = @_;
+
     my $lowest = 0;
+
     for my $c (48, 60, 72) {
         if (any { $_ == $c } @$pitches) {
             $lowest = $c;
             last;
         }
     }
+
     return $lowest;
 }
 
@@ -238,21 +248,29 @@ used to create this.
 
 sub voicings {
     my ($self, $chord_name, $format) = @_;
+
     $chord_name //= '';
     $format ||= '';
+
     my $voicings = $self->chords->{ 'C' . $chord_name };
+
     if ($format) {
         my $temp;
+
         for my $chord (@$voicings) {
             my $span;
+
             for my $n (@$chord) {
                 my $note = Music::Note->new($n, 'midinum')->format($format);
                 push @$span, $note;
             }
+
             push @$temp, $span;
         }
+
         $voicings = $temp;
     }
+
     return $voicings;
 }
 
