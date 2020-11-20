@@ -3,6 +3,7 @@ Revision history for MIDI-Chord-Guitar
 {{$NEXT}}
     - Update documentation slightly.
     - Fix-up eg/voicing-stat a bit.
+    - Add eg/unchained-melody to illustrate another picking technique.
 
 0.0304 2020-11-08 11:09:43
     - Fix-up eg/ programs a bit.
