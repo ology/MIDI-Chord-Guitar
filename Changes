@@ -4,6 +4,7 @@ Revision history for MIDI-Chord-Guitar
     - Update documentation slightly.
     - Fix-up eg/voicing-stat a bit.
     - Add eg/unchained-melody to illustrate another picking technique.
+    - Add the voicing_file attribute and remove the ->as_file method.
 
 0.0304 2020-11-08 11:09:43
     - Fix-up eg/ programs a bit.
