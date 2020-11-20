@@ -52,6 +52,24 @@ of an C<E A D G B E> tuned guitar.
 
 =head1 ATTRIBUTES
 
+=head2 voicing_file
+
+The CSV file with which to find the MIDI numbered chord voicings.
+
+If not given, L<File::ShareDir> is used.
+
+=cut
+
+has voicing_file => (
+  is => 'lazy',
+);
+
+sub _build_voicing_file {
+    my ($self) = @_;
+    my $file = eval { dist_dir('MIDI-Chord-Guitar') . '/midi-guitar-chord-voicings.csv' };
+    return $file;
+}
+
 =head2 chords
 
   $chords = $mcg->chords;
@@ -100,7 +118,7 @@ has chords => (
 sub _build_chords {
     my ($self) = @_;
 
-    my $file = $self->as_file();
+    my $file = $self->voicing_file;
 
     my %data;
 
@@ -124,22 +142,6 @@ sub _build_chords {
 }
 
 =head1 METHODS
-
-=head2 as_file
-
-  $filename = $mcg->as_file;
-
-Return the guitar chord data filename location.
-
-=cut
-
-sub as_file {
-    my ($self) = @_;
-    my $file = eval { dist_dir('MIDI-Chord-Guitar') . '/midi-guitar-chord-voicings.csv' };
-    $file = 'share/midi-guitar-chord-voicings.csv'
-        unless $file && -e $file;
-    return $file;
-}
 
 =head2 transform
 
@@ -215,7 +217,7 @@ So, the first variations are at lower frets.  Please use the above
 diagrams to figure out the exact neck positions.
 
 Here is an example of the voicing CSV file which can be found with the
-B<as_file> method:
+B<voicing_file> attribute:
 
   C,48,52,55,60,,
   C,48,55,60,64,67,
