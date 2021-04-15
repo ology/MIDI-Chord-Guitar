@@ -102,7 +102,7 @@ sub _build_chords {
         for my $r (@$row) {
             push @notes, $r if $r ne '';
         }
-        push @{ $data{$chord} }, \@notes;
+        push @{ $data{$chord}{notes} }, \@notes;
     }
 
     close $fh;
@@ -150,14 +150,14 @@ sub transform {
     my @notes;
 
     if (defined $variation) {
-      my $pitches = $self->chords->{ 'C' . $chord_name }[$variation];
+      my $pitches = $self->chords->{ 'C' . $chord_name }{notes}[$variation];
 
       my $diff = $target - _lowest_c($pitches);
 
       @notes = map { $_ + $diff } @$pitches;
     }
     else {
-        for my $pitches (@{ $self->chords->{ 'C' . $chord_name } }) {
+        for my $pitches (@{ $self->chords->{ 'C' . $chord_name }{notes} }) {
             my $diff = $target - _lowest_c($pitches);
             push @notes, [ map { $_ + $diff } @$pitches ];
         }
@@ -221,7 +221,7 @@ sub voicings {
     $chord_name //= '';
     $format ||= '';
 
-    my $voicings = $self->chords->{ 'C' . $chord_name };
+    my $voicings = $self->chords->{ 'C' . $chord_name }{notes};
 
     if ($format) {
         my $temp;
