@@ -8,6 +8,7 @@ use MIDI::Util qw(setup_score);
 
 my $score = setup_score(patch => 24, bpm => 120);
 
+#my $mcg = MIDI::Chord::Guitar->new(voicing_file => 'share/midi-guitar-chord-voicings.csv');
 my $mcg = MIDI::Chord::Guitar->new;
 
 for my $n (1 .. 4) {
