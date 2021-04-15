@@ -2,6 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Add a fingering column to the chord data.
+    - Add missing chords and fix voicings.
     - Update the eg/ programs.
     - Improve documentation.
 
