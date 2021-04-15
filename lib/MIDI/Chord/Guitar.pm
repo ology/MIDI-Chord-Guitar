@@ -22,19 +22,15 @@ use namespace::clean;
   my $mcg = MIDI::Chord::Guitar->new;
 
   my $chords = $mcg->transform('D3', 'dim7');
-  # [ [41, 47, 50, 56], [50, 56, 59, 65, 68] ]
 
   my $chord = $mcg->transform('D3', 'dim7', 0);
-  # [41, 47, 50, 56]
 
   # MIDI:
   #$score->n('wn', @$chord);
 
   my $voicings = $mcg->voicings('dim7');
-  # [ [51, 57, 60, 66], [48, 54, 57, 63, 66] ]
 
   $voicings = $mcg->voicings('dim7', 'ISO');
-  # [ [D#3 A3 C4 F#4], [C3 F#3 A3 D#4 F#4] ]
 
 =head1 DESCRIPTION
 
