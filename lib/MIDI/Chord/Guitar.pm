@@ -98,6 +98,7 @@ sub _build_chords {
     while (my $row = $csv->getline($fh)) {
         my $chord = shift @$row;
         my $fingering = shift @$row;
+        push @{ $data{$chord}{fingering} }, $fingering;
         my @notes;
         for my $r (@$row) {
             push @notes, $r if $r ne '';
