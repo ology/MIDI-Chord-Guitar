@@ -96,12 +96,13 @@ sub _build_chords {
         or die "Can't read $file: $!";
 
     while (my $row = $csv->getline($fh)) {
-        my $key = shift @$row;
+        my $chord = shift @$row;
+        my $fingering = shift @$row;
         my @notes;
         for my $r (@$row) {
             push @notes, $r if $r ne '';
         }
-        push @{ $data{$key} }, \@notes;
+        push @{ $data{$chord} }, \@notes;
     }
 
     close $fh;
