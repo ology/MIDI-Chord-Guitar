@@ -262,4 +262,6 @@ L<Text::CSV_XS>
 
 L<https://www.guitartricks.com/chords/C-chord> shapes
 
+L<https://www.oolimo.com/guitarchords/C> shapes
+
 =cut
