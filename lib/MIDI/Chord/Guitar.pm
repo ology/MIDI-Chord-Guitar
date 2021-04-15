@@ -54,9 +54,11 @@ of an C<E A D G B E> tuned guitar.
 
 =head2 voicing_file
 
+  $file = $mcg->voicing_file;
+
 The CSV file with which to find the MIDI numbered chord voicings.
 
-If not given, L<File::ShareDir> is used.
+If not given, the installed L<File::ShareDir> CSV file is used.
 
 =cut
 
@@ -74,7 +76,8 @@ sub _build_voicing_file {
 
   $chords = $mcg->chords;
 
-Computed attribute available after construction.
+Computed attribute, containing the fingerings and voicings for all
+known chords, available after construction.
 
 =cut
 
@@ -199,16 +202,16 @@ diagrams to figure out the exact neck positions.
 Here is an example of the voicing CSV file which can be found with the
 B<voicing_file> attribute:
 
-  C,48,52,55,60,,
-  C,48,55,60,64,67,
-  C,48,52,55,60,64,72
-  C,48,55,60,64,67,72
-  C,60,67,72,76,,
-  C7,48,52,58,60,64,
-  C7,48,55,58,64,67,
-  C7,48,55,58,64,67,72
-  C7,48,52,55,60,64,70
-  C7,60,67,70,76,,
+  C,x32010-1,48,52,55,60,,                                                                                                                                                     
+  C,x13331-3,48,55,60,64,67,
+  C,431114-5,48,52,55,60,64,72
+  C,133211-8,48,55,60,64,67,72
+  C,xx1343-10,60,67,72,76,,
+  C7,x32310-1,48,52,58,60,64,
+  C7,x13131-3,48,55,58,64,67,
+  C7,431112-5,48,52,55,60,64,70
+  C7,131211-8,48,55,58,64,70,72
+  C7,xx1323-10,60,67,70,76,,
   ...
 
 Check out the link in the L</"SEE ALSO"> section for the chord shapes
@@ -250,6 +253,8 @@ __END__
 =head1 SEE ALSO
 
 The F<t/01-methods.t> and F<eg/*> files in this distribution
+
+The CSV of chords used by this module (with the C<voicing_file> attribute)
 
 L<File::ShareDir>
 
