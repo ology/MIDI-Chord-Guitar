@@ -76,38 +76,6 @@ sub _build_voicing_file {
 
 Computed attribute available after construction.
 
-The known chord names are as follows:
-
-  '' (major)
-  aug
-  dim
-  dim7
-  m (minor)
-  m6
-  m7
-  m7b5
-  m7b5#9
-  m9
-  m11
-  maj7
-  maj7#11
-  maj9
-  sus2
-  sus4
-  6
-  6(9)
-  7
-  7#5
-  7#9
-  7b13
-  7b5
-  7b9
-  7b9b13
-  9
-  9sus4
-  11
-  13
-
 =cut
 
 has chords => (
