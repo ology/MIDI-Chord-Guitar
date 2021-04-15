@@ -202,7 +202,7 @@ diagrams to figure out the exact neck positions.
 Here is an example of the voicing CSV file which can be found with the
 B<voicing_file> attribute:
 
-  C,x32010-1,48,52,55,60,,                                                                                                                                                     
+  C,x32010-1,48,52,55,60,,
   C,x13331-3,48,55,60,64,67,
   C,431114-5,48,52,55,60,64,72
   C,133211-8,48,55,60,64,67,72
