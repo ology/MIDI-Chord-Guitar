@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 use File::ShareDir qw(dist_dir);
-use List::Util qw(any);
+use List::Util qw(any zip);
 use Music::Note;
 use Text::CSV_XS ();
 use Moo;
@@ -241,6 +241,46 @@ sub voicings {
     }
 
     return $voicings;
+}
+
+=head2 fingering
+
+  $fingering = $mcg->fingering($target, $chord_name, $variation);
+  $fingerings = $mcg->fingering($target, $chord_name);
+
+As with the C<transform> method, but for neck position, finger
+placement.
+
+=cut
+
+sub fingering {
+    my ($self, $target, $chord_name, $variation) = @_;
+
+    $target = Music::Note->new($target, 'ISO')->format('midinum');
+
+    $chord_name //= '';
+
+    my @fingering;
+
+    if (defined $variation) {
+        my $fingering = $self->chords->{ 'C' . $chord_name }{fingering}[$variation];
+
+        my $pitches = $self->chords->{ 'C' . $chord_name }{notes}[$variation];
+        my $diff = $target - _lowest_c($pitches);
+
+        my ($str, $pos) = split /-/, $fingering;
+        push @fingering, $str . '-' . ($pos + $diff);
+    }
+    else {
+        for (zip $self->chords->{ 'C' . $chord_name }{notes}, $self->chords->{ 'C' . $chord_name }{fingering}) {
+            my ($pitches, $fingering) = @$_;
+            my $diff = $target - _lowest_c($pitches);
+            my ($str, $pos) = split /-/, $fingering;
+            push @fingering, $str . '-' . ($pos + $diff);
+        }
+    }
+
+    return \@fingering;
 }
 
 1;

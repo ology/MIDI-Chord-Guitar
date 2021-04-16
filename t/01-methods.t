@@ -50,4 +50,16 @@ $got = $mcg->voicings('dim7', 'midi');
 $expect = [ [ 'C3', 'Ds3', 'As3', 'C4' ], [ 'C3', 'G3', 'As3', 'Ds4', 'G4' ], [ 'C3', 'G3', 'As3', 'Ds4', 'G4', 'C5' ], [ 'C4', 'G4', 'As4', 'Ds5' ] ];
 is_deeply $got, $expect, 'voicings';
 
+$got = $mcg->fingering('D3', '', 1);
+$expect = [ 'x13331-5' ];
+is_deeply $got, $expect, 'fingering';
+
+$got = $mcg->fingering('D3', '', 4);
+$expect = [ 'xx1343-0' ];
+is_deeply $got, $expect, 'fingering';
+
+$got = $mcg->fingering('E2', '', 3);
+$expect = [ '133211-0' ];
+is_deeply $got, $expect, 'fingering';
+
 done_testing();
