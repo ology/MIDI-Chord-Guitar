@@ -209,7 +209,7 @@ B<voicing_file> attribute:
   C7,xx1323-10,60,67,70,76,,
   ...
 
-Check out the link in the L</"SEE ALSO"> section for the chord shapes
+Check out the links in the L</"SEE ALSO"> section for the chord shapes
 used to create this.
 
 =cut
