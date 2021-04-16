@@ -22,8 +22,10 @@ use namespace::clean;
   my $mcg = MIDI::Chord::Guitar->new;
 
   my $chords = $mcg->transform('D3', 'dim7');
-
   my $chord = $mcg->transform('D3', 'dim7', 0);
+
+  my $fingerings = $mcg->fingering('D3', 'dim7');
+  my $fingering = $mcg->fingering('D3', 'dim7', 0);
 
   # MIDI:
   #$score->n('wn', @$chord);
