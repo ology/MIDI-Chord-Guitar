@@ -285,9 +285,12 @@ sub fingering {
             my $diff = $target - _lowest_c($pitches);
             my ($str, $pos) = split /-/, $fingering;
             my $p = $pos + $diff;
-            if ($p == 0) {
+            if ($p == 0 && $str !~ /0/) {
                 $str = _decrement_fingering($str);
                 $p++;
+            }
+            elsif ($p != 0 && $str =~ /0/) {
+                $str = _increment_fingering($str);
             }
             push @fingering, $str . '-' . $p;
         }
