@@ -192,8 +192,7 @@ The default B<format> is C<midinum> but can be given as C<ISO> or
 C<midi> to return named notes with octaves.
 
 The order of the voicing variations of a chord is by fret position.
-So, the first variations are at lower frets.  Please use the above
-diagrams to figure out the exact neck positions.
+So, the first variations are at lower frets.
 
 Here is an example of the voicing CSV file which can be found with the
 B<voicing_file> attribute:
