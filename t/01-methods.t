@@ -63,7 +63,7 @@ $expect = [ '022100-1' ];
 is_deeply $got, $expect, 'fingering';
 
 $got = $mcg->fingering('D3', '', 0);
-$expect = [ '022100-1' ];
+$expect = [ 'x43121-3' ];
 is_deeply $got, $expect, 'fingering';
 
 done_testing();
