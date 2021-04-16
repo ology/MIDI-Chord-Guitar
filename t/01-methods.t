@@ -55,11 +55,11 @@ $expect = [ 'x13331-5' ];
 is_deeply $got, $expect, 'fingering';
 
 $got = $mcg->fingering('D3', '', 4);
-$expect = [ 'xx1343-0' ];
+$expect = [ 'xx0232-1' ];
 is_deeply $got, $expect, 'fingering';
 
 $got = $mcg->fingering('E2', '', 3);
-$expect = [ '133211-0' ];
+$expect = [ '022100-1' ];
 is_deeply $got, $expect, 'fingering';
 
 done_testing();
