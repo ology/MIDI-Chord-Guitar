@@ -270,18 +270,37 @@ sub fingering {
         my $diff = $target - _lowest_c($pitches);
 
         my ($str, $pos) = split /-/, $fingering;
-        push @fingering, $str . '-' . ($pos + $diff);
+        my $p = $pos + $diff;
+        if ($p == 0) {
+            $str = _decrement_fingering($str);
+            $p++;
+        }
+        push @fingering, $str . '-' . $p;
     }
     else {
         for (zip $self->chords->{ 'C' . $chord_name }{notes}, $self->chords->{ 'C' . $chord_name }{fingering}) {
             my ($pitches, $fingering) = @$_;
             my $diff = $target - _lowest_c($pitches);
             my ($str, $pos) = split /-/, $fingering;
-            push @fingering, $str . '-' . ($pos + $diff);
+            my $p = $pos + $diff;
+            if ($p == 0) {
+                $str = _decrement_fingering($str);
+                $p++;
+            }
+            push @fingering, $str . '-' . $p;
         }
     }
 
     return \@fingering;
+}
+
+sub _decrement_fingering {
+    my ($fingering) = @_;
+    my $decremented = '';
+    for my $char (split //, $fingering) {
+        $decremented .= $char =~ /\d/ ? $char - 1 : $char;
+    }
+    return $decremented;
 }
 
 1;
