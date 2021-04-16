@@ -23,7 +23,6 @@ use namespace::clean;
 
   my $chords = $mcg->transform('D3', 'dim7');
   my $chord = $mcg->transform('D3', 'dim7', 0);
-
   # MIDI:
   #$score->n('wn', @$chord);
 
