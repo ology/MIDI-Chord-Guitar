@@ -1,6 +1,7 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - "Decrement" the fingering when the neck position is zero.
 
 0.0601 2021-04-15 23:59:16
     - Improve documentation.
