@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Add and test for missing else-if clause!
+
+0.0602 2021-04-16 00:46:08
     - "Decrement" the fingering when the neck position is zero.
     - "Increment" the fingering when the original has open strings.
 
