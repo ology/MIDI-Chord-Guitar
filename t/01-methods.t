@@ -68,6 +68,6 @@ is_deeply $got, $expect, 'fingering';
 
 $got = $mcg->fingering('D3', '');
 $expect = [ 'x43121-3', 'x13331-5', '431114-7', '133211-10', 'xx0232-1' ];
-is_deeply $got, $expect, 'fingering';
+is_deeply $got, $expect, 'fingerings';
 
 done_testing();
