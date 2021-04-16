@@ -1,6 +1,8 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+
+0.0600 2021-04-15 23:37:55
     - Add the ->fingering method.
 
 0.0502 2021-04-15 10:19:31
