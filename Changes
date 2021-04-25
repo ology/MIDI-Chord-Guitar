@@ -1,6 +1,8 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+
+0.0603 2021-04-16 01:00:41
     - Add and test for missing else-if clause!
 
 0.0602 2021-04-16 00:46:08
