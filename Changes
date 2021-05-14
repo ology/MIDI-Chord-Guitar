@@ -1,9 +1,11 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+
+0.0605 2021-05-13 23:13:36
     - Fix the 6 chord voicings which were wonky for some reason.
     - Fix a couple diminished chord voicings, too. :\
-    - Fix 7#5.
+    - Fix "7#5" (augmented 7th) chords.
     - Neuter 7b9 chord voicings, as there were questionable ones.
 
 0.0604 2021-05-02 19:13:52
