@@ -2,7 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Fix the 6 chord voicings which were wonky for some reason.
-    - Fix a couple diminished chord voicings, too.
+    - Fix a couple diminished chord voicings, too. :\
 
 0.0604 2021-05-02 19:13:52
     - Fix the dim7 chords which seemed to be duplicates of m!
