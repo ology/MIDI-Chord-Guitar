@@ -35,8 +35,8 @@ use namespace::clean;
 
 =head1 DESCRIPTION
 
-C<MIDI::Chord::Guitar> provides MIDI pitches for common chord voicings
-of an C<E A D G B E> tuned guitar.
+C<MIDI::Chord::Guitar> provides MIDI pitch numbers for common chord
+voicings of an C<E A D G B E> tuned guitar.
 
 =begin html
 
