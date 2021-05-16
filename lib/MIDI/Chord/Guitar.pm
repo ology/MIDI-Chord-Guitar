@@ -47,6 +47,11 @@ voicings of an C<E A D G B E> tuned guitar.
 
 =end html
 
+In order to craft a MIDI-Perl program with appropriate
+transformations, cross-reference the voicing CSV included in this
+distribution, with the diagrams above.  Check out the fingering
+column, and choose the best voicing to use.
+
 =head1 ATTRIBUTES
 
 =head2 voicing_file
