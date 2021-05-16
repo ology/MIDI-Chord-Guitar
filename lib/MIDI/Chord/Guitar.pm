@@ -52,6 +52,12 @@ transformations, cross-reference the voicing CSV included in this
 distribution, with the diagrams above.  Check out the fingering
 column, and choose the best voicing to use.
 
+Alternatively, inspect the results of the C<fingering> method for each
+chord, and select those that are appropriate.
+
+For guitar, "appropriate" means to consider bass movement and melodic
+phrasing, etc.
+
 =head1 ATTRIBUTES
 
 =head2 voicing_file
