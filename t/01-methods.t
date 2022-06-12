@@ -70,4 +70,9 @@ $got = $mcg->fingering('D3', '');
 $expect = [ 'x43121-3', 'x13331-5', '431114-7', '133211-10', 'xx0232-1' ];
 is_deeply $got, $expect, 'fingerings';
 
+# No negative positions
+$got = $mcg->fingering('E2', 'm');
+$expect = [ '022000-1' ];
+is_deeply $got, $expect, 'fingering';
+
 done_testing();
