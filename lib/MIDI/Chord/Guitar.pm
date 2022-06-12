@@ -274,12 +274,36 @@ sub fingering {
 
     if (defined $variation) {
         my $fingering = $self->chords->{ 'C' . $chord_name }{fingering}[$variation];
-
         my $pitches = $self->chords->{ 'C' . $chord_name }{notes}[$variation];
-        my $diff = $target - _lowest_c($pitches);
 
-        my ($str, $pos) = split /-/, $fingering;
-        my $p = $pos + $diff;
+        my ($str, $p) = _find_fingering($target, $pitches, $fingering);
+
+        push @fingering, $str . '-' . $p if $p >= 0;
+    }
+    else {
+        for (zip $self->chords->{ 'C' . $chord_name }{notes}, $self->chords->{ 'C' . $chord_name }{fingering}) {
+            my ($pitches, $fingering) = @$_;
+
+            my ($str, $p) = _find_fingering($target, $pitches, $fingering);
+
+            push @fingering, $str . '-' . $p if $p >= 0;
+        }
+    }
+
+    return \@fingering;
+}
+
+# XXX This is overly complicated, questionable logic
+sub _find_fingering {
+    my ($target, $pitches, $fingering) = @_;
+
+    my $diff = $target - _lowest_c($pitches);
+
+    my ($str, $pos) = split /-/, $fingering;
+
+    my $p = $pos + $diff;
+
+    if ($pos != 1 && $str !~ /0/) {
         if ($p == 0 && $str !~ /0/) {
             $str = _decrement_fingering($str);
             $p++;
@@ -287,27 +311,15 @@ sub fingering {
         elsif ($p != 0 && $str =~ /0/) {
             $str = _increment_fingering($str);
         }
-        push @fingering, $str . '-' . $p;
     }
-    else {
-        for (zip $self->chords->{ 'C' . $chord_name }{notes}, $self->chords->{ 'C' . $chord_name }{fingering}) {
-            my ($pitches, $fingering) = @$_;
-            my $diff = $target - _lowest_c($pitches);
-            my ($str, $pos) = split /-/, $fingering;
-            my $p = $pos + $diff;
-            if ($p == 0 && $str !~ /0/) {
-                $str = _decrement_fingering($str);
-                $p++;
-            }
-            elsif ($p != 0 && $str =~ /0/) {
-                $str = _increment_fingering($str);
-            }
-            push @fingering, $str . '-' . $p if $p >= 0;
-        }
+    elsif ($p > 1 && $str =~ /0/) {
+        $str = _increment_fingering($str);
+        $p--;
     }
 
-    return \@fingering;
+    return $str, $p;
 }
+
 
 sub _increment_fingering {
     my ($fingering) = @_;
