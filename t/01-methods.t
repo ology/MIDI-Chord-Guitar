@@ -23,6 +23,10 @@ subtest transform => sub {
     $expect = [];
     is_deeply $got, $expect, 'transform';
 
+    $got = $mcg->transform('C3', '', 0);
+    $expect = [48,52,55,60];
+    is_deeply $got, $expect, 'transform';
+
     $got = $mcg->transform('D3', '', 4);
     $expect = [50, 57, 62, 66];
     is_deeply $got, $expect, 'transform';
