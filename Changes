@@ -2,6 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Improve documentation.
+    - Attempt to correct the convoluted, questionable logic in the fingering() method.
 
 0.0609 2022-06-12 12:22:49
     - Do not show fingerings with negative positions.
