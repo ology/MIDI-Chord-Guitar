@@ -2,6 +2,7 @@ Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
     - Do not show fingerings with negative positions.
+    - Improve test program.
 
 0.0608 2021-05-15 22:35:24
     - Fix 7b9 again. :\
