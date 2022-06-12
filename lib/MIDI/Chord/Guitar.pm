@@ -48,9 +48,8 @@ voicings of an C<E A D G B E> tuned guitar.
 =end html
 
 In order to craft a MIDI-Perl program with appropriate
-transformations, cross-reference the voicing CSV included in this
-distribution, with the diagrams above.  Check out the fingering
-column, and choose the best voicing to use.
+transformations, cross-reference the voicing CSV
+(B<voicing_file>) with the diagrams above.
 
 Alternatively, inspect the results of the C<fingering> method for each
 chord, and select those that are appropriate.
