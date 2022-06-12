@@ -303,7 +303,7 @@ sub fingering {
             elsif ($p != 0 && $str =~ /0/) {
                 $str = _increment_fingering($str);
             }
-            push @fingering, $str . '-' . $p;
+            push @fingering, $str . '-' . $p if $p >= 0;
         }
     }
 
