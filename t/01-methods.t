@@ -67,8 +67,24 @@ subtest fingering => sub {
         voicing_file => 'share/midi-guitar-chord-voicings.csv',
     ];
 
-    my $got = $mcg->fingering('D3', '', 1);
-    my $expect = [ 'x13331-5' ];
+    my $got = $mcg->fingering('C3', '', 0);
+    my $expect = [ 'x32010-1' ];
+    is_deeply $got, $expect, 'fingering';
+
+    $got = $mcg->fingering('C3', '7', 0);
+    $expect = [ 'x32310-1' ];
+    is_deeply $got, $expect, 'fingering';
+
+    $got = $mcg->fingering('C3', 'aug', 0);
+    $expect = [ 'x3211x-1' ];
+    is_deeply $got, $expect, 'fingering';
+
+    $got = $mcg->fingering('C3', '', 1);
+    $expect = [ 'x13331-3' ];
+    is_deeply $got, $expect, 'fingering';
+
+    $got = $mcg->fingering('D3', '', 1);
+    $expect = [ 'x13331-5' ];
     is_deeply $got, $expect, 'fingering';
 
     $got = $mcg->fingering('D3', '', 4);
@@ -80,12 +96,12 @@ subtest fingering => sub {
     is_deeply $got, $expect, 'fingering';
 
     $got = $mcg->fingering('D3', '', 0);
-    $expect = [ 'x43121-3' ];
+    $expect = [ 'x43121-2' ];
     is_deeply $got, $expect, 'fingering';
 
     $got = $mcg->fingering('D3', '');
-    $expect = [ 'x43121-3', 'x13331-5', '431114-7', '133211-10', 'xx0232-1' ];
-    is_deeply $got, $expect, 'fingerings';
+    $expect = [ 'x43121-2', 'x13331-5', '431114-7', '133211-10', 'xx0232-1' ];
+    is_deeply $got, $expect, 'fingering';
 
     # No negative positions
     $got = $mcg->fingering('E2', 'm');
