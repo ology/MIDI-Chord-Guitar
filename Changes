@@ -1,6 +1,9 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Oops. Fix the Cm the MIDI-nums too.
+
+0.0701 2022-06-13 21:15:16
     - Fix Cm voicing.
 
 0.0700 2022-06-12 14:47:05
