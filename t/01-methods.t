@@ -6,9 +6,11 @@ use Test::More;
 
 use_ok 'MIDI::Chord::Guitar';
 
+my $voicing = 'share/midi-guitar-chord-voicings.csv';
+
 subtest transform => sub {
     my $mcg = new_ok 'MIDI::Chord::Guitar' => [
-        voicing_file => 'share/midi-guitar-chord-voicings.csv',
+        voicing_file => $voicing,
     ];
 
     my $got = $mcg->transform('X', '', 0);
@@ -46,7 +48,7 @@ subtest transform => sub {
 
 subtest voicings => sub {
     my $mcg = new_ok 'MIDI::Chord::Guitar' => [
-        voicing_file => 'share/midi-guitar-chord-voicings.csv',
+        voicing_file => $voicing,
     ];
 
     my $got = $mcg->voicings('dim7');
@@ -64,7 +66,7 @@ subtest voicings => sub {
 
 subtest fingering => sub {
     my $mcg = new_ok 'MIDI::Chord::Guitar' => [
-        voicing_file => 'share/midi-guitar-chord-voicings.csv',
+        voicing_file => $voicing,
     ];
 
     my $got = $mcg->fingering('C3', '', 0);
