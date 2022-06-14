@@ -346,6 +346,8 @@ __END__
 
 The F<t/01-methods.t> and F<eg/*> files in this distribution
 
+The F<eg/fretboard> program in the L<Music::FretboardDiagram> distribution
+
 The CSV of chords used by this module (with the C<voicing_file> attribute)
 
 L<File::ShareDir>
