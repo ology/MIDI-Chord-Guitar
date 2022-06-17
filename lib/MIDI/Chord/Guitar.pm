@@ -2,7 +2,7 @@ package MIDI::Chord::Guitar;
 
 # ABSTRACT: MIDI pitches for guitar chord voicings
 
-our $VERSION = '0.0703';
+our $VERSION = '0.0704';
 
 use strict;
 use warnings;
@@ -158,7 +158,6 @@ sub transform {
     my ($self, $target, $chord_name, $variation) = @_;
 
     $target = $self->pitchnum($target);
-
     croak 'Invalid note' unless $target;
 
     $chord_name //= '';
