@@ -3,22 +3,28 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Exception;
 
 use_ok 'MIDI::Chord::Guitar';
 
 my $voicing = 'share/midi-guitar-chord-voicings.csv';
+
+subtest throws => sub {
+    my $mcg = new_ok 'MIDI::Chord::Guitar' => [
+        voicing_file => $voicing,
+    ];
+
+    throws_ok { $mcg->transform('X', '', 0) }
+        qr/Invalid note/, 'bogus note';
+};
 
 subtest transform => sub {
     my $mcg = new_ok 'MIDI::Chord::Guitar' => [
         voicing_file => $voicing,
     ];
 
-    my $got = $mcg->transform('X', '', 0);
-    my $expect = [60, 64, 67, 72]; # C4
-    is_deeply $got, $expect, 'transform';
-
-    $got = $mcg->transform('C3', 'X', 0);
-    $expect = [];
+    my $got = $mcg->transform('C3', 'X', 0);
+    my $expect = [];
     is_deeply $got, $expect, 'transform';
 
     $got = $mcg->transform('C3', '', 42);
