@@ -7,6 +7,7 @@ our $VERSION = '0.0703';
 use strict;
 use warnings;
 
+use Carp qw(croak);
 use File::ShareDir qw(dist_dir);
 use List::Util qw(any zip);
 use Music::Note;
@@ -105,7 +106,7 @@ sub _build_chords {
     my $csv = Text::CSV_XS->new({ binary => 1 });
 
     open my $fh, '<', $file
-        or die "Can't read $file: $!";
+        or croak "Can't read $file: $!";
 
     while (my $row = $csv->getline($fh)) {
         my $chord = shift @$row;
@@ -157,6 +158,8 @@ sub transform {
     my ($self, $target, $chord_name, $variation) = @_;
 
     $target = $self->pitchnum($target);
+
+    croak 'Invalid note' unless $target;
 
     $chord_name //= '';
 
