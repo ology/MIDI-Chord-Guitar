@@ -15,6 +15,8 @@ use Moo;
 use strictures 2;
 use namespace::clean;
 
+with('Music::PitchNum');
+
 =head1 SYNOPSIS
 
   use MIDI::Chord::Guitar;
@@ -154,7 +156,7 @@ key of C:
 sub transform {
     my ($self, $target, $chord_name, $variation) = @_;
 
-    $target = Music::Note->new($target, 'ISO')->format('midinum');
+    $target = $self->pitchnum($target);
 
     $chord_name //= '';
 
@@ -266,7 +268,7 @@ placement.
 sub fingering {
     my ($self, $target, $chord_name, $variation) = @_;
 
-    $target = Music::Note->new($target, 'ISO')->format('midinum');
+    $target = $self->pitchnum($target);
 
     $chord_name //= '';
 
