@@ -1,6 +1,7 @@
 Revision history for MIDI-Chord-Guitar
 
 {{$NEXT}}
+    - Avoid implicit imports.
 
 0.0704 2022-06-16 20:29:50
     - Improve documentation.
